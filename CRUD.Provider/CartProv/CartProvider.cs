@@ -6,6 +6,7 @@ using Mapster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,12 +14,10 @@ namespace CRUD.Provider.CartProv
 {
     public class CartProvider : ICartProvider
     {
-        private readonly IProdukRepository _produkRepository;
         private readonly ICartRepository _cartRepository;
 
-        public CartProvider(IProdukRepository produkRepository,ICartRepository cartRepository)
+        public CartProvider(ICartRepository cartRepository)
         {
-            _produkRepository = produkRepository;
             _cartRepository = cartRepository;
         }
         public JsonResultVM DeleteCartById(int id)
