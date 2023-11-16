@@ -1,4 +1,5 @@
-﻿using CRUD.Provider.ProdukProvd;
+﻿using CRUD.Provider.CartProv;
+using CRUD.Provider.ProdukProvd;
 using CRUD.Provider.UserProv;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,6 +16,7 @@ namespace CRUD.Provider
         {
             services.AddScoped<IUserProvider, UserProvider>();
             services.AddScoped<IProdukProvider, ProdukProvider>();
+            services.AddScoped<ICartProvider, CartProvider>();
             return services;
         }
     }
